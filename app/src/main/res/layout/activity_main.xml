@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A2E"
+    android:padding="12dp">
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📐 函数图像绘制器"
+        android:textColor="#E0E0E0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center" />
+
+    <!-- 输入行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="y = "
+            android:textColor="#FF9800"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/functionInput"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@drawable/input_bg"
+            android:hint="例如: sin(x), x^2+2*x-3"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#666666"
+            android:textSize="15sp"
+            android:paddingHorizontal="10dp"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/plotButton"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="6dp"
+            android:text="绘制"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF9800"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- 快捷按钮行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button android:id="@+id/btnSin"  android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1" android:layout_marginEnd="3dp" android:text="sin(x)"   android:textSize="11sp" android:backgroundTint="#333355" android:textColor="#CCCCCC" />
+        <Button android:id="@+id/btnCos"  android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1" android:layout_marginEnd="3dp" android:text="cos(x)"   android:textSize="11sp" android:backgroundTint="#333355" android:textColor="#CCCCCC" />
+        <Button android:id="@+id/btnX2"   android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1" android:layout_marginEnd="3dp" android:text="x^2"      android:textSize="11sp" android:backgroundTint="#333355" android:textColor="#CCCCCC" />
+        <Button android:id="@+id/btnX3"   android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1" android:layout_marginEnd="3dp" android:text="x^3-x"    android:textSize="11sp" android:backgroundTint="#333355" android:textColor="#CCCCCC" />
+        <Button android:id="@+id/btnExp"  android:layout_width="0dp" android:layout_height="34dp" android:layout_weight="1" android:text="2^x"       android:textSize="11sp" android:backgroundTint="#333355" android:textColor="#CCCCCC" />
+
+    </LinearLayout>
+
+    <!-- 错误提示 -->
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF5252"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
+
+    <!-- 绘图区域 -->
+    <com.example.functionplotter.FunctionPlotView
+        android:id="@+id/plotView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
